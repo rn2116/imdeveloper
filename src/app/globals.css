@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #151515;
+  --bg-tertiary: #1F1F1F;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A3A3A3;
+  --border-color: #303030;
+  --border-subtle: #202020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for sleek editorial dark feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Selection style */
+::selection {
+  background-color: #F5F5F5;
+  color: #0A0A0A;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #F5F5F5;
+  outline-offset: 3px;
+}
+
+/* Kinetic typography stagger utility classes */
+.kinetic-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.kinetic-char {
+  display: inline-block;
+  animation: revealChar 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes revealChar {
+  0% {
+    opacity: 0;
+    transform: translateY(115%) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+  }
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .kinetic-char {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
