@@ -1,3 +1,5 @@
+export type ProjectSource = "local" | "github";
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -11,6 +13,8 @@ export interface ProjectItem {
   demoUrl?: string;
   repoUrl?: string;
   featured: boolean;
+  source?: ProjectSource;
+  slug?: string;
   metrics?: {
     label: string;
     value: string;
@@ -33,6 +37,8 @@ export const projectsData: ProjectItem[] = [
     demoUrl: "https://github.com/rn2116/kinetix-design-system",
     repoUrl: "https://github.com/rn2116/kinetix-design-system",
     featured: true,
+    source: "local",
+    slug: "kinetix-ui",
     metrics: [
       { label: "Runtime JS", value: "0.0 KB" },
       { label: "Contrast Ratio", value: "18.4 : 1" },
@@ -54,6 +60,8 @@ export const projectsData: ProjectItem[] = [
     demoUrl: "https://github.com/rn2116/devpulse-telemetry",
     repoUrl: "https://github.com/rn2116/devpulse-telemetry",
     featured: true,
+    source: "local",
+    slug: "devpulse-telemetry",
     metrics: [
       { label: "INP Latency", value: "< 24 ms" },
       { label: "Layout Shift", value: "0.000 CLS" },
@@ -75,6 +83,8 @@ export const projectsData: ProjectItem[] = [
     demoUrl: "https://github.com/rn2116/docucraft-studio",
     repoUrl: "https://github.com/rn2116/docucraft-studio",
     featured: true,
+    source: "local",
+    slug: "docucraft-studio",
     metrics: [
       { label: "Load Time", value: "0.2s" },
       { label: "Offline First", value: "100%" },

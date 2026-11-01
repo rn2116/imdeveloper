@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { profileData } from "@/data/profile";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Mail, Copy, Check, ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
@@ -92,6 +93,29 @@ export function Contact() {
               {copied ? "Alamat email berhasil disalin ke clipboard." : ""}
             </div>
           </div>
+
+          {/* WhatsApp Direct Box */}
+          {profileData.contact.whatsapp && (
+            <div className="p-6 border border-line bg-surface mt-8 space-y-4">
+              <div className="flex items-center gap-2 font-mono text-xs text-foreground-muted">
+                <span className="w-1.5 h-1.5 bg-foreground rounded-full" aria-hidden="true" />
+                <span>WHATSAPP</span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                <WhatsAppButton
+                  label="Hubungi via WhatsApp"
+                  size="md"
+                />
+
+                <p className="text-sm text-foreground-muted font-sans leading-relaxed">
+                  Klik tombol di atas untuk membuka obrolan WhatsApp dengan pesan
+                  yang sudah diisi otomatis. Anda tetap menekan tombol Kirim
+                  sendiri di WhatsApp.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right: Availability & Social Links */}
@@ -145,6 +169,29 @@ export function Contact() {
               </div>
               <ArrowUpRight className="w-4 h-4 text-foreground-muted group-hover:text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
+
+            {profileData.contact.whatsapp && (
+              <a
+                href={`https://wa.me/${profileData.contact.whatsapp}?text=${encodeURIComponent(
+                  "Halo Rafly, saya mengunjungi website portofolio kamu. Saya tertarik untuk berdiskusi mengenai peluang kerja sama. Apakah kita bisa berbicara lebih lanjut?"
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 border border-line bg-surface hover:bg-surface-hover hover:border-foreground/40 transition-colors text-foreground group"
+                aria-label="Hubungi Muhammad Rafly via WhatsApp"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center text-foreground font-mono text-[10px] font-bold">
+                    WA
+                  </span>
+                  <div>
+                    <span className="font-mono text-xs text-foreground block font-bold">WHATSAPP</span>
+                    <span className="text-xs text-foreground-muted font-mono">{profileData.contact.whatsapp}</span>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-foreground-muted group-hover:text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            )}
           </div>
         </div>
       </div>

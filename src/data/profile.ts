@@ -1,3 +1,5 @@
+import { siteConfig } from "@/data/config";
+
 export interface ProfileData {
   name: string;
   role: string;
@@ -13,6 +15,7 @@ export interface ProfileData {
     email: string;
     github: string;
     linkedin: string;
+    whatsapp: string | null;
   };
 }
 
@@ -32,7 +35,8 @@ export const profileData: ProfileData = {
   },
   contact: {
     email: "rncyber21@gmail.com",
-    github: "https://github.com/rn2116",
+    github: "https://github.com/benarr",
     linkedin: "https://linkedin.com/in/rn2116",
+    whatsapp: siteConfig.whatsappNumber ?? null,
   },
 };

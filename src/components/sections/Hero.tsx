@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { profileData } from "@/data/profile";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export function Hero() {
   const firstName = "MUHAMMAD";
@@ -112,6 +113,14 @@ export function Hero() {
             <span>Hubungi Saya</span>
             <ArrowUpRight className="w-4 h-4 text-foreground-muted" />
           </a>
+
+          {profileData.contact.whatsapp && (
+            <WhatsAppButton
+              label="Chat WhatsApp"
+              size="md"
+              text="Halo Rafly, saya menemukan kamu melalui portofolio website. Saya tertarik untuk berdiskusi mengenai peluang kerja sama."
+            />
+          )}
         </div>
       </div>
 
