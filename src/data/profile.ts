@@ -35,8 +35,8 @@ export const profileData: ProfileData = {
   },
   contact: {
     email: "rncyber21@gmail.com",
-    github: "https://github.com/benarr",
-    linkedin: "https://linkedin.com/in/rn2116",
-    whatsapp: siteConfig.whatsappNumber ?? null,
+    github: "https://github.com/rn2116",
+    linkedin: "https://www.linkedin.com/in/muhammadrafly21",
+    whatsapp: siteConfig.whatsappNumber ?? '628114532019'
   },
 };

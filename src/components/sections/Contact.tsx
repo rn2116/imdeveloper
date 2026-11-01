@@ -164,7 +164,7 @@ export function Contact() {
                 <LinkedinIcon className="w-5 h-5 text-foreground-muted group-hover:text-foreground transition-colors" />
                 <div>
                   <span className="font-mono text-xs text-foreground block font-bold">LINKEDIN</span>
-                  <span className="text-xs text-foreground-muted font-mono">in/rn2116</span>
+                  <span className="text-xs text-foreground-muted font-mono">Muhammad Rafly</span>
                 </div>
               </div>
               <ArrowUpRight className="w-4 h-4 text-foreground-muted group-hover:text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
