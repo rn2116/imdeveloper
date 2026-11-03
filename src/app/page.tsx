@@ -5,6 +5,7 @@ import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
 import GitHubProjects from "@/components/sections/GitHubProjects";
 import { Experience } from "@/components/sections/Experience";
+import { AcademicThesis } from "@/components/sections/AcademicThesis";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <Projects />
         <GitHubProjects />
         <Experience />
+        <AcademicThesis />
         <Contact />
       </main>
 

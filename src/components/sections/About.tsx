@@ -1,7 +1,8 @@
 import React from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { profileData } from "@/data/profile";
-import { Code2, Gauge, Eye, Terminal } from "lucide-react";
+import { educationProfile } from "@/data/thesis";
+import { Code2, Gauge, Eye, Terminal, BookOpen } from "lucide-react";
 
 const principles = [
   {
@@ -57,6 +58,24 @@ export function About() {
             native browser, Server Components, CSS modern, serta pengoptimalan aset sebelum tergesa-gesa
             menambahkan library eksternal berukuran besar.
           </p>
+
+          {/* Education Card */}
+          <div className="mt-2 border border-line bg-surface p-5 sm:p-6 rounded-lg">
+            <div className="flex items-center gap-2 mb-3 font-mono text-[10px] text-foreground-muted uppercase tracking-wider">
+              <BookOpen className="w-3 h-3" />
+              <span>Education</span>
+            </div>
+            <h3 className="text-base sm:text-lg font-bold tracking-tight text-foreground mb-1 font-sans">
+              {educationProfile.degree}
+            </h3>
+            <p className="text-sm text-foreground font-medium mb-1">
+              {educationProfile.university}
+            </p>
+            <p className="text-xs font-mono text-foreground-muted">
+              {educationProfile.faculty} • {educationProfile.department} •
+              Lulusan: {educationProfile.graduatedAt}
+            </p>
+          </div>
 
           <div className="pt-4 border-t border-line/60 grid grid-cols-2 sm:grid-cols-3 gap-6 font-mono text-xs">
             <div>

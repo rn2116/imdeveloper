@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#stack", label: "Stack" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Journey" },
+  { href: "#academic", label: "Thesis" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -24,7 +25,7 @@ export function Navbar() {
       setScrolled(window.scrollY > 40);
 
       // Simple active section spy
-      const sections = ["about", "stack", "projects", "experience", "contact"];
+      const sections = ["about", "stack", "projects", "experience", "academic", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
